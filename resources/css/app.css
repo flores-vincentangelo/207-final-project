@@ -48,6 +48,7 @@
     --color-light-green: #c9d4ac;
     --color-dark-green: #0e2c08;
 
+
 }
 
 @layer theme {
@@ -91,6 +92,10 @@ select:focus[data-flux-control] {
     height: 100vh;
     width: 100vw;
 } */
+
+.form-container {
+    @apply shadow-xl/20 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0;
+}
 
 .form-input {
     @apply bg-white border border-green text-dark-green text-sm rounded-lg block w-full p-2.5 placeholder-gray-400  focus:ring-green focus:border-green;

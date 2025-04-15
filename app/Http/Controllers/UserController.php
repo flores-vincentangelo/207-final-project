@@ -15,10 +15,30 @@ class UserController extends Controller
             "name" => "required",
             "password" => "required"
         ]);
-        
+
         $incomingFields['password'] = bcrypt($incomingFields['password']);
         $user = User::create($incomingFields);
         Auth::login($user);
+        return redirect('/login');
+    }
+
+
+    public function login(Request $request){
+        $incomingFields = $request->validate([
+            "email" => ["required", "email"],
+            "password" => "required"
+        ]);
+
+        if (Auth::attempt($incomingFields)) {
+            $request->session()->regenerate();
+            return redirect("/");
+        } else {
+            return redirect("/login");
+        }
+    }
+
+    public function logout(){
+        Auth::logout();
         return redirect('/login');
     }
 }
