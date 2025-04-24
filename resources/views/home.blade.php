@@ -10,6 +10,8 @@
             @csrf
             <button>Log out</button>
         </form>
+
+        <x-product-list :products="$products"/>
     @endauth
 
     @guest

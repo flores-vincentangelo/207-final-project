@@ -29,19 +29,18 @@
     --color-zinc-950: #0a0a0a;
 
 
-    --off-white: #f4ffff;
+    /* --color-white: #f4ffff;
     --sage: #c9d4ac;
     --moss: #739642;
     --honey: #fdca7b;
     --timber: #c3914c;
     --evergreen: #0e2c08;
-    --black: #161a14;
+    --black: #161a14; */
 
     /* --color-accent: var(--color-neutral-800); */
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
     
-    --color-white: #f4ffff;
     --color-black: #161a14;
     --color-accent: #fdca7b;
     --color-green: #739642;
@@ -105,3 +104,16 @@ select:focus[data-flux-control] {
     @apply w-full text-white bg-green hover:bg-dark-green focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center;
 
 }
+
+.product-list-container {
+    @apply bg-white mb-3 p-3 flex flex-row ;
+    width: 80vw;
+    .product-list-entry{
+        margin-right: calc(var(--spacing) * 2);
+    }
+    
+    .product-list-description{
+        width: 60vw;
+    }
+}
+
