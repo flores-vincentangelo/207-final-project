@@ -106,10 +106,22 @@ select:focus[data-flux-control] {
 }
 
 .product-list-container {
-    @apply bg-white mb-3 p-3 flex flex-row ;
     width: 80vw;
+    border-radius: 10px;
+    box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
+    -webkit-box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
+    -moz-box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
+    
+    margin-bottom: calc(var(--spacing) * 5);
     .product-list-entry{
         margin-right: calc(var(--spacing) * 2);
+
+        .image-styling {
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
     }
     
     .product-list-description{

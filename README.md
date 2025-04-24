@@ -64,3 +64,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+1. Sustainable Product Catalog
+
+🔹 Goal: Promote eco-friendly consumer habits by providing a database of sustainable products.
+🔹 Features:
+
+User registration and login
+Product catalog with sustainability ratings
+Search and filter functionality
+
+getting started
+
+run composer install
+npm install
+npm run build
+
+php artisan migrate
+php artisan db:seed
