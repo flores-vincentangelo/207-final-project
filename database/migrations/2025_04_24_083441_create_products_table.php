@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('description');
             $table->float('price');
             $table->integer('quantity');
+            $table->longText('image')->nullable(true);
         });
     }
 
