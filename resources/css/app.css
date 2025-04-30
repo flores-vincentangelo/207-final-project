@@ -148,43 +148,70 @@ select:focus[data-flux-control] {
 /* some changes */
 
 
-table {
 
-    width: 70%;
-    border: 1px solid #ddd;
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px;
-    }
-
-    th {
-        text-align: center;
-    }
-
-    td {
-        text-align: center;
-        
-    }
-}
 
 .checkout {
+    --table-width: 90%;
+    --container-width: 80vw;
+
+    
+    .home-button-container {
+        width: var(--container-width);
+        margin-bottom: 20px;
+    }
     .table-container {
-        width: 60vw;
+        width: var(--container-width);
         border-radius: 10px;
+
+        .image-styling {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    
+        .header-row {
+            background-color: var(--color-dark-green);
+            color: var(--color-white);
+        }
+
+        table {
+
+            width: var(--table-width);
+            border: 1px solid #ddd;
+        
+            th, td {
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+            }
+        
+            th {
+                text-align: center;
+            }
+        
+            td {
+                text-align: center;
+                
+            }
+        }
+        
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .total-row {
+            width: var(--table-width);
+            margin: 20px 0;
+        }
     }
 
-    .image-styling {
-        height: 100px;
-        width: 100px;
-        border-radius: 10px;
-        object-fit: cover;
-    }
 
-    .header-row {
-        background-color: var(--color-dark-green);
-        color: var(--color-white);
-    }
 
 }
 

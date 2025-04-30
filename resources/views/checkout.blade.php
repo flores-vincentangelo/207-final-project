@@ -4,7 +4,11 @@
         @php
             $totalCost = 0
         @endphp
+        <div class="home-button-container">
+            <a href="/">< Back to Home</a>
+        </div>
         <div class="table-container shadowing bg-white flex flex-col items-center p-3">
+            <h1 class="text-dark-green">Products</h1>
             <table class="">
                 <tr class="header-row">
                     <th></th>
@@ -21,14 +25,17 @@
                         <td>
                             <img class="image-styling" src="{{ $product->image }}" alt="">
                         </td>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->pivot->quantity}}</td>
-                        <td>{{number_format($product->price, 2)}}</td>
-                        <td>{{number_format($product->price * $product->pivot->quantity, 2)}}</td>
+                        <td>{{ $product->name}}</td>
+                        <td>{{ $product->pivot->quantity}}</td>
+                        <td>{{ number_format($product->price, 2)}}</td>
+                        <td>{{ number_format($product->price * $product->pivot->quantity, 2) }}</td>
                     </tr>
                 @endforeach
-
             </table>
+            <div class="total-row flex flex-row items-center justify-between text-dark-green">
+                <h2>Total</h2>
+                <h2>{{ number_format($totalCost, 2) }}</h2>
+            </div>
         </div>
     </div>
 @endsection
