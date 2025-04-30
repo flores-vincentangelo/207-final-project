@@ -14,15 +14,8 @@ class CartController extends Controller
     //
     
     public function addToCart(Product $product, Request $request) {
-        $user = Auth::user();
-        $cart = $user->cart()->get();
-        if ($cart->isEmpty()) {
-            $cart = Cart::create([
-                "user_id" => $user->id,
-            ]);
-        }
-
-        $cart->products()->attach($product->id, ["quantity" => $request->input('quantity')]);
+        $cart = Auth::user()->cart()->get();
+        $cart[0]->products()->attach($product->id, ["quantity" => $request->input('quantity')]);
         return redirect('/');
     }
 
