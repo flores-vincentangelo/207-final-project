@@ -4,13 +4,17 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
 
+Route::redirect('/', '/home');
+Route::get('/home/{query?}', function (Request $request) {
+    
+    // echo var_dump($request);
     $user = Auth::user();
-    $products = Product::all();
+    $products = (new ProductController)->search($request);
     $cart = Auth::user()->cart()->get();
     $cart_products = null;
     if ($cart->isEmpty()) {

@@ -52,16 +52,4 @@ class User extends Authenticatable
         $cartInstance = $this->hasOne(Cart::class);
         return $cartInstance;
     }
-
-    // delete this method
-    public function getCartProducts() {
-        // $cartProducts = $this->hasManyThrough(Product::class, Cart::class);
-        $userId = Auth::user()->id;
-        $cartEntries = Cart::where('user_id',$userId)->get();
-
-        foreach ($cartEntries as $cart) {
-            $products = $cart->products()->get();
-        };
-        // return $cartProducts;
-    }
 }
