@@ -17,7 +17,7 @@ Route::get('/', function () {
             $cart = (new CartController)->createCart();
         }
     }
-    return view('home', ['products' => $products, 'cart' => $cart]);
+    return view('home', ['products' => $products, 'cart' => $cart[0]]);
 });
 
 Route::get('/login', function () {
