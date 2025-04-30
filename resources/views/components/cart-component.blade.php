@@ -1,13 +1,13 @@
 <div class="cart-container bg-white">
-    cart products
+    cart
     @php
         $totalCost = 0
     @endphp
     <table>
         <tr>
-            <td></td>
-            <td>Product Name</td>
-            <td>quantity</td>
+            <th></th>
+            <th>Product Name</th>
+            <th>quantity</th>
         </tr>
 
         @foreach ($cartproducts as $product)
@@ -18,7 +18,6 @@
                 <td>
                     <img class="image-styling" src="{{ $product->image }}" alt="">
                 </td>
-                <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
                 <td>
                     <form action="/update-cart/{{ $product->id }}" method="POST">
@@ -31,6 +30,11 @@
             </tr>
         @endforeach
     </table>
+    <div>
+        {{ $totalCost }}
+    </div>
+    <div>
+        <a href="/checkout">Checkout</a>
+    </div>
 
-    {{ $totalCost }}
 </div>

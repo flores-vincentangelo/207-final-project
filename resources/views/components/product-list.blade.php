@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center">
     @foreach ($products as $product)
-        <div class="product-list-container bg-white p-3 flex flex-row">
+        <div class="product-list-container shadowing bg-white p-3 flex flex-row">
             <div class="product-list-entry">
                 <img
                     class="image-styling" 
