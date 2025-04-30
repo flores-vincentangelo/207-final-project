@@ -26,6 +26,12 @@ class DatabaseSeeder extends Seeder
             'password'=> bcrypt('123'),
         ]);
 
+        User::factory()->create([
+            'name' => 'Vincent',
+            'email' => 'tnecniv_serolf@yahoo.com',
+            'password'=> bcrypt('123'),
+        ]);
+
         Product::factory()->create([
             "name"=> "Bamboo Toothbrush",
             "description"=> "A biodegradable toothbrush with a 100% bamboo handle and BPA-free nylon bristles.",
