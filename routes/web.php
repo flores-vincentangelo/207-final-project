@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Auth;
 Route::redirect('/', '/home');
 Route::get('/home/{query?}', function (Request $request) {
     
-    // echo var_dump($request);
-    $user = Auth::user();
     $products = (new ProductController)->search($request);
     $cart = Auth::user()->cart()->get();
     $cart_products = null;
@@ -24,7 +22,7 @@ Route::get('/home/{query?}', function (Request $request) {
         $cart_products = $cart[0]->products()->get();
     }
 
-    return view('home', ['user'=> $user, 'products' => $products, 'cart' => $cart[0], 'cart_products' => $cart_products]);
+    return view('home', ['products' => $products, 'cart' => $cart[0], 'cart_products' => $cart_products]);
 })->middleware('auth');
 
 Route::get('/login', function () {
