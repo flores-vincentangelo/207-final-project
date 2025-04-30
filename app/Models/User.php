@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+
 
 class User extends Authenticatable
 {
@@ -44,5 +46,22 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function cart() {
+        $cartInstance = $this->hasOne(Cart::class);
+        return $cartInstance;
+    }
+
+    // delete this method
+    public function getCartProducts() {
+        // $cartProducts = $this->hasManyThrough(Product::class, Cart::class);
+        $userId = Auth::user()->id;
+        $cartEntries = Cart::where('user_id',$userId)->get();
+
+        foreach ($cartEntries as $cart) {
+            $products = $cart->products()->get();
+        };
+        // return $cartProducts;
     }
 }
