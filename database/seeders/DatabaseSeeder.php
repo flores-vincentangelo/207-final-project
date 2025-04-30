@@ -37,7 +37,8 @@ class DatabaseSeeder extends Seeder
             "description"=> "A biodegradable toothbrush with a 100% bamboo handle and BPA-free nylon bristles.",
             "price"=>120,
             "quantity"=> 100,
-            "image"=>"images/products/bamboo-toothbrush.jpeg"
+            "image"=>"images/products/bamboo-toothbrush.jpeg",
+            "rating"=> 4
         ]);
 
         Product::factory()->create([
@@ -45,43 +46,48 @@ class DatabaseSeeder extends Seeder
             "description"=> "A stainless steel straw set with a cleaning brush and pouch — perfect for reducing plastic waste.",
             "price"=> 150,
             "quantity"=> 100,
-            "image"=>"images/products/metal-straws.jpg"
+            "image"=>"images/products/metal-straws.jpg",
+            "rating"=> 3
         ]);
         Product::factory()->create([
             "name"=> "Refillable Liquid Hand Soap (500ml)",
             "description"=> "Lavender-scented, non-toxic, cruelty-free hand soap in a refillable glass bottle.",
             "price"=> 280,
             "quantity"=> 100,
-            "image"=>"images/products/hand-soap.jpeg"
-
+            "image"=>"images/products/hand-soap.jpeg",
+            "rating"=> 3
         ]);
         Product::factory()->create([
             "name"=> "Natural Laundry Detergent (1kg)",
             "description"=> "Plant-based, hypoallergenic detergent with zero synthetic fragrances — safe for babies and sensitive skin.",
             "price"=> 380,
             "quantity"=> 100,
-            "image"=>"images/products/laundry-detergent.webp"            
+            "image"=>"images/products/laundry-detergent.webp",
+            "rating"=> 5
         ]);
         Product::factory()->create([
             "name"=> "Natural Deodorant Stick",
             "description"=> "Aluminum-free, all-natural deodorant in a compostable or refillable container.",
             "price"=> 320,
             "quantity"=> 100,
-            "image"=>"images/products/deo.jpg"            
+            "image"=>"images/products/deo.jpg",
+            "rating"=> 4
         ]);
         Product::factory()->create([
             "name"=> "Solar-Powered LED Lantern",
             "description"=> "Portable and collapsible lantern ideal for camping or emergencies. Charges via sunlight.",
             "price"=> 550,
             "quantity"=> 100,
-            "image"=>"images/products/lantern.jpeg"            
+            "image"=>"images/products/lantern.jpeg"            ,
+            "rating"=> 5
         ]);
         Product::factory()->create([
             "name"=> "Upcycled Denim Tote Bag",
             "description"=> "Handmade from repurposed denim jeans. Stylish, durable, and one-of-a-kind.",
             "price"=> 690,
             "quantity"=> 100,
-            "image"=>"images/products/tote.jpg"            
+            "image"=>"images/products/tote.jpg",
+            "rating"=> 3
         ]);
     }
 }

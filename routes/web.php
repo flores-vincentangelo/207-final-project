@@ -12,12 +12,14 @@ Route::get('/', function () {
     $user = Auth::user();
     $products = Product::all();
     $cart = Auth::user()->cart()->get();
+    $cart_products = null;
     if ($cart->isEmpty()) {
         $cart = (new CartController)->createCart();
+        $cart_products = $cart->products()->get();
+    } else {
+        $cart_products = $cart[0]->products()->get();
     }
 
-    $cart_products = $cart[0]->products()->get();
-    
     return view('home', ['user'=> $user, 'products' => $products, 'cart' => $cart[0], 'cart_products' => $cart_products]);
 })->middleware('auth');
 
