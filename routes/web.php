@@ -10,14 +10,17 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     $products = [];
     $cart = null;
+    $cart_products = null;
     if(Auth::user()) {
         $products = Product::all();
         $cart = Auth::user()->cart()->get();
         if ($cart->isEmpty()) {
             $cart = (new CartController)->createCart();
         }
+
+        $cart_products = $cart[0]->products()->get();
     }
-    return view('home', ['products' => $products, 'cart' => $cart[0]]);
+    return view('home', ['products' => $products, 'cart' => $cart[0], 'cart_products' => $cart_products]);
 });
 
 Route::get('/login', function () {
@@ -34,3 +37,4 @@ Route::get('/register', function () {
 Route::post('/register', [UserController::class, 'register']);
 
 Route::post('/add-to-cart/{product}', [CartController::class, 'addToCart']);
+Route::put('/update-cart/{product}', [CartController::class, 'updateCart']);

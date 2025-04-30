@@ -27,4 +27,17 @@ class CartController extends Controller
 
         return $cart;
     }
+
+    public function updateCart(Product $product, Request $request) {
+        $cart = Auth::user()->cart()->get();
+        $quantity = $request->input('quantity');
+
+        if( $quantity == 0 ){
+            $cart[0]->products()->detach($product->id);
+        } else {
+            $cart[0]->products()->syncWithoutDetaching([$product->id => ['quantity' => $quantity]]);
+        }
+
+        return redirect('/');
+    }
 }
