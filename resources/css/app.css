@@ -124,6 +124,15 @@ body {
 }
 
 .search-container {
+    svg {
+        width: calc(var(--spacing) * 7);
+        height: calc(var(--spacing) * 7);
+        margin-right: calc(var(--spacing) * 3);
+        path {
+            fill: var(--color-green);
+        }
+
+    }
     
     input[type=text] {
         width: calc(var(--spacing) * 50);
