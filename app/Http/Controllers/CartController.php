@@ -15,7 +15,19 @@ class CartController extends Controller
     
     public function addToCart(Product $product, Request $request) {
         $cart = Auth::user()->cart()->get();
-        $cart[0]->products()->attach($product->id, ["quantity" => $request->input('quantity')]);
+        $incomingFields = $request->validate([
+            "quantity" => 'gt:0'
+        ]);
+        $quantity = $incomingFields['quantity'];
+
+        $product_from_query = $cart[0]->products()->where('product_id', $product->id)->get();
+        if ($product_from_query->isEmpty()) {
+            $cart[0]->products()->attach($product->id, ["quantity" => $quantity]);
+        } else {
+            $newQuantity = $quantity + $product_from_query[0]->pivot->quantity;
+            $cart[0]->products()->syncWithoutDetaching([$product->id => ['quantity' => $newQuantity]]);
+        }
+        
         return redirect('/');
     }
 
@@ -30,7 +42,11 @@ class CartController extends Controller
 
     public function updateCart(Product $product, Request $request) {
         $cart = Auth::user()->cart()->get();
-        $quantity = $request->input('quantity');
+        $incomingFields = $request->validate([
+            "quantity" => 'gt:-1'
+        ]);
+
+        $quantity = $incomingFields['quantity'];
 
         if( $quantity == 0 ){
             $cart[0]->products()->detach($product->id);

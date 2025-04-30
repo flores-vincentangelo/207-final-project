@@ -4,6 +4,7 @@
         This is the home page
     </div>
 
+
     @auth
         this is for logged in user
         <form action="/logout" method="POST">
@@ -12,6 +13,17 @@
         </form>
 
         <x-product-list :products="$products"/>
+
+        product2
+    {{ $product2 }}
+
+        <div>
+            Cart
+        </div>
+        {{ $cart }}
+
+        {{-- {{ $cart_products }} --}}
+        <x-cart-component :cartproducts="$cart_products" />
     @endauth
 
     @guest

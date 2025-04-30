@@ -18,6 +18,7 @@
                 <td>
                     <img class="image-styling" src="{{ $product->image }}" alt="">
                 </td>
+                <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
                 <td>
                     <form action="/update-cart/{{ $product->id }}" method="POST">
