@@ -27,7 +27,7 @@
                         <input type="password" name="password" id="password" placeholder="••••••••" class="form-input"
                             required="">
                     </div>
-                    <button class="form-button">Log in</button>
+                    <button class="form-button w-full">Log in</button>
                 </form>
             </div>
         </div>

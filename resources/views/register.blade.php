@@ -29,7 +29,7 @@
                         <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
                             class="form-input" required="">
                     </div>
-                    <button class="form-button">Create an account</button>
+                    <button class="form-button w-full">Create an account</button>
                     <p class="text-sm font-light text-gray-600">
                         Already have an account? <a href="/login" class="font-medium text-primary-600 hover:underline">Login
                             here</a>

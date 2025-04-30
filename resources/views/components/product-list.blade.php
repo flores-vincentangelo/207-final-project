@@ -1,6 +1,6 @@
-<div class="flex flex-row flex-wrap justify-center">
+<div class="product-list-container flex flex-row flex-wrap justify-center">
     @foreach ($products as $product)
-        <div class="product-list-container shadowing bg-white">
+        <div class="product-card shadowing curve-edge bg-white">
             <div class="product-list-entry">
                 <img class="image-styling" src="{{ $product->image }}" alt="">
             </div>
