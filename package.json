@@ -1,9 +1,14 @@
 {
     "private": true,
     "type": "module",
+    "watch": {
+        "watch-css": "app.css"
+    },
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "watch-css": "npm run build",
+        "watch": "npm-watch"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.1.4",
@@ -14,6 +19,7 @@
         "vite": "^6.2.4"
     },
     "dependencies": {
-        "flowbite": "^3.1.2"
+        "flowbite": "^3.1.2",
+        "npm-watch": "^0.13.0"
     }
 }
