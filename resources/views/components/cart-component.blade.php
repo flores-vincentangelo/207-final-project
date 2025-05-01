@@ -1,4 +1,4 @@
-<div :class="{'translate-x-full': !cartOpen}" class="shadowing cart-container bg-white z-10 fixed inset-y-0 right-0 top-0 transition eas-in-out duration-200 ">
+<div :class="{'translate-x-full': !cartOpen}" class="shadowing cart-container bg-white z-10 fixed inset-y-0 right-0 top-0 transition ease-in-out duration-200 translate-x-full">
     <div class="flex flex-col items-center">
         <div class="close-container flex flex-row items-center">
             <button @click="cartOpen = ! cartOpen">

@@ -1,4 +1,4 @@
-<div :class="{'translate-x-full': !filterOpen}" class="filter-container shadowing cart-container bg-white z-20 fixed inset-y-0 right-0 top-0 transition eas-in-out duration-200 ">
+<div :class="{'translate-x-full': !filterOpen}" class="filter-container shadowing cart-container bg-white z-20 fixed inset-y-0 right-0 top-0 transition ease-in-out duration-200 translate-x-full">
     <div class="flex flex-col items-center">
         <div class="close-container flex flex-row items-center">
             <button @click="filterOpen = ! filterOpen">

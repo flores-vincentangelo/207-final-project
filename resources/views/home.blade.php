@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+
+    <div class="black-overlay transition ease-in-out duration-200 hidden" 
+        :class="{'hidden': !filterOpen && !cartOpen }" 
+        @click="cartOpen = false; filterOpen = false;"></div>
     <x-header-component :displaycart="$displayCart" />
     <div class="search-container flex flex-row items-center justify-center">
         <div class="svg-container bg-green hover:bg-dark-green flex flex-row items-center rounded-lg">
