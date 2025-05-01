@@ -111,10 +111,33 @@ body {
     margin-bottom: calc(var(--spacing) * 5);
 
     .cart-icon-container {
+        background-color: var(--color-green);
         margin-right: calc(var(--spacing)* 5);
+        cursor: pointer;
+        border-radius: var(--radius-lg);
+        padding: calc(var(--spacing) * 1);
+
+            svg {
+                width: calc(var(--spacing) * 10);
+                height: calc(var(--spacing) * 10);
+                cursor: pointer;
+
+                path {
+                    fill: var(--color-green);
+                    stroke: var(--color-white);
+                    stroke-width: 1.5;
+                }
+            }
+
+    }
+
+    .cart-icon-container:hover {
+        background-color: var(--color-dark-green);
+
         svg {
-            width: calc(var(--spacing) * 7);
-            height: calc(var(--spacing) * 7); 
+            path {
+                fill: var(--color-dark-green);
+            }
         }
     }
 }
