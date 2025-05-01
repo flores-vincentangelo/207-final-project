@@ -21,34 +21,39 @@
             <tr>
                 <th></th>
                 <th>Product Name</th>
-                <th>quantity</th>
+                <th>Quantity</th>
             </tr>
     
             @foreach ($cartproducts as $product)
-                    @php
-                        $totalCost += $product->price * $product->pivot->quantity
-                    @endphp
-                    <tr>
-                        <td>
-                            <img class="image-styling" src="{{ $product->image }}" alt="">
-                        </td>
-                        <td>{{$product->name}}</td>
-                        <td>
-                            <form action="/update-cart/{{ $product->id }}" method="POST">
-                                @csrf
-                                @method('PUT')
-                                <input type="number" name="quantity" id="quantity" value={{ $product->pivot->quantity }}>
-                                <button>Update cart</button>
-                            </form>
-                        </td>
-                    </tr>
+                @php
+                    $totalCost += $product->price * $product->pivot->quantity
+                @endphp
+                <tr>
+                    <td>
+                        <img class="image-styling" src="{{ $product->image }}" alt="">
+                    </td>
+                    <td>{{$product->name}}</td>
+                    <td>
+                        <form action="/update-cart/{{ $product->id }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input type="number" name="quantity" id="quantity" value={{ $product->pivot->quantity }}>
+                            <button class="form-button">Update cart</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
         </table>
-        <div>
-            {{ $totalCost }}
+        <div class="total-row flex flex-row items-center justify-between text-dark-green">
+            <h3>Total</h3>
+            <h3>{{ number_format($totalCost, 2) }}</h3>
         </div>
-        <div>
-            <a href="/checkout">Checkout</a>
+        <div class="checkout-button-container w-full flex flex-row justify-center items-center">
+            <a href="/checkout">
+                <button class="form-button">
+                    Checkout
+                </button>
+            </a>
         </div>
         </div>
     </div>
