@@ -105,6 +105,21 @@ body {
     cursor: pointer;
 }
 
+h1 {
+    font-size: calc(var(--spacing) * 14);
+    font-weight: bold;
+}
+
+h2 {
+    font-size: calc(var(--spacing) * 9);
+    font-weight: bold;
+}
+
+h3 {
+    font-size: calc(var(--spacing) * 7);
+    font-weight: bold;
+}
+
 .header-container {
     width: 100%;
     padding: calc(var(--spacing) * 3) calc(var(--spacing) * 7);
@@ -221,10 +236,7 @@ input {
             }
         }
         
-        h3 {
-            font-size: calc(var(--spacing) * 7);
-            font-weight: bold;
-        }
+
     
         .rating-container {
             display: flex;
@@ -274,9 +286,34 @@ input {
 
 
 .cart-container {
-    width: 40%;
-    /* height: 100vh; */
+    /* width: 40%; */
     padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
+
+    .close-container {
+        position: absolute;
+        left: calc(var(--spacing)*2);
+        top: calc(var(--spacing)*2);
+        background-color: var(--color-green);
+        border-radius: var(--radius-lg);
+        padding: calc(var(--spacing) * .5);
+
+        svg {
+            width: calc(var(--spacing) * 5);
+            height: calc(var(--spacing) * 5);
+            cursor: pointer;
+
+            path {
+                fill: var(--color-white);
+                /* stroke: var(--color-white); */
+                /* stroke-width: 1.5; */
+            }
+        }
+    }
+
+    .close-container:hover {
+        background-color: var(--color-dark-green);
+
+    }
 
     .image-styling {
         height: 100px;
@@ -333,16 +370,6 @@ input {
                 text-align: center;
                 
             }
-        }
-        
-        h1 {
-            font-size: calc(var(--spacing) * 14);
-            font-weight: bold;
-        }
-
-        h2 {
-            font-size: calc(var(--spacing) * 9);
-            font-weight: bold;
         }
 
         .total-row {
