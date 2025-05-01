@@ -56,4 +56,12 @@ class CartController extends Controller
 
         return redirect('/');
     }
+
+    public function clearCart() {
+        $cart = Auth::user()->cart()->get();
+
+        $cart[0]->products()->detach();
+        
+        return redirect('/');
+    }
 }

@@ -93,3 +93,5 @@ Route::get('/checkout', function() {
 
     ]);
 })->middleware('auth');
+
+Route::post('/checkout', [CartController::class, 'clearCart']);

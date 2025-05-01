@@ -42,7 +42,7 @@
         </div>
 
         <div class="deliver-container shadowing curve-edge bg-white flex flex-col items-center p-3">
-            <form action="" class="w-full flex flex-col items-baseline">
+            <form action="/checkout" class="w-full flex flex-col items-baseline" method="POST">
                 <span class="text-gray-400">*This form won't actually collect your data. This is for demo purposes only</span>
                 <h2 class="text-dark-green">Customer Info:</h2>
                 @csrf
