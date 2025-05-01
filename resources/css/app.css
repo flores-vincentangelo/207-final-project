@@ -37,17 +37,15 @@
     --evergreen: #0e2c08;
     --black: #161a14; */
 
-    /* --color-accent: var(--color-neutral-800); */
+    --color-accent: #fdca7b;
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
     
     --color-black: #161a14;
-    --color-accent: #fdca7b;
+    --color-accentcolor: #fdca7b;
     --color-green: #739642;
-    --color-light-green: #c9d4ac;
-    --color-dark-green: #0e2c08;
-
-
+    --color-lightgreen: #c9d4ac;
+    --color-dark-green: #124a07;
 }
 
 @layer theme {
@@ -104,12 +102,13 @@ body {
 
 .form-button{
     @apply text-white bg-green hover:bg-dark-green focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center;
-
+    cursor: pointer;
 }
 
 .header-container {
     width: 100%;
     padding: calc(var(--spacing) * 3) calc(var(--spacing) * 7);
+    margin-bottom: calc(var(--spacing) * 5);
 }
 
 .curve-edge {
@@ -123,24 +122,44 @@ body {
     -moz-box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
 }
 
-.search-container {
-    svg {
-        width: calc(var(--spacing) * 7);
-        height: calc(var(--spacing) * 7);
-        margin-right: calc(var(--spacing) * 3);
-        path {
-            fill: var(--color-green);
-        }
+input {
+    border: 1px solid var(--color-green); 
+    border-radius: var(--radius-lg);
+}
 
+.search-container {
+    margin-bottom: calc(var(--spacing) * 5);
+    .svg-container {
+        margin-right: calc(var(--spacing) * 3);
+        padding: calc(var(--spacing) * 1.5);
+        cursor: pointer;
+
+        svg {
+            width: calc(var(--spacing) * 7);
+            height: calc(var(--spacing) * 7);
+            path {
+                fill: var(--color-white);
+            }
+        }
+    }
+
+    form {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        input[type=text] {
+            width: calc(var(--spacing) * 50);
+            margin-right: calc(var(--spacing) * 3);
+        }
+    
+        .form-button {
+            width: calc(var(--spacing) * 20);
+        }
     }
     
-    input[type=text] {
-        width: calc(var(--spacing) * 50);
-    }
-
-    .form-button {
-        width: calc(var(--spacing) * 20);
-    }
 }
 
 .product-list-container {

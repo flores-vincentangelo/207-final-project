@@ -1,6 +1,20 @@
 @extends('layouts.app')
 @section('content')
     <x-header-component/>
+    <div class="search-container flex flex-row items-center justify-center">
+        <div class="svg-container bg-green hover:bg-dark-green flex flex-row items-center rounded-lg">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 3H16V1H0V3Z" fill="#000000" />
+                <path d="M2 7H14V5H2V7Z" fill="#000000" />
+                <path d="M4 11H12V9H4V11Z" fill="#000000" />
+                <path d="M10 15H6V13H10V15Z" fill="#000000" />
+            </svg>
+        </div>
+            <form action="/home/" method="GET">
+                <input type="text" id="query" name="query" placeholder="search">
+                <button class="form-button">Search</button>
+            </form>
+    </div>
     <x-product-list :products="$products" />
     <x-cart-component :cartproducts="$cart_products" />
 

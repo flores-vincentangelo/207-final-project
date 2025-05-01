@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="bg-light-green flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
+    <div class="bg-lightgreen flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
         <div class="p-auto flex flex-col items-center justify-center mb-2">
             <svg fill="#0e2c08" width="200px" height="200px" viewBox="0 0 14 14" role="img" focusable="false"
                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg">

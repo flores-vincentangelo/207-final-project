@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="bg-light-green flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
+    <div class="bg-lightgreen flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
         <div class="form-container">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-dark-green md:text-2xl">
