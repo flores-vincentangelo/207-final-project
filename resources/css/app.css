@@ -109,6 +109,14 @@ body {
     width: 100%;
     padding: calc(var(--spacing) * 3) calc(var(--spacing) * 7);
     margin-bottom: calc(var(--spacing) * 5);
+
+    .cart-icon-container {
+        margin-right: calc(var(--spacing)* 5);
+        svg {
+            width: calc(var(--spacing) * 7);
+            height: calc(var(--spacing) * 7); 
+        }
+    }
 }
 
 .curve-edge {
