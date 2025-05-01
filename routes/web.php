@@ -22,7 +22,7 @@ Route::get('/home/{query?}', function (Request $request) {
         $cart_products = $cart[0]->products()->get();
     }
 
-    return view('home', ['products' => $products, 'cart' => $cart[0], 'cart_products' => $cart_products]);
+    return view('home', ['products' => $products, 'cart' => $cart[0], 'cart_products' => $cart_products, 'displayCart' => true]);
 })->middleware('auth');
 
 Route::get('/login', function () {
@@ -48,5 +48,5 @@ Route::get('/checkout', function() {
         return redirect('/');
     }
 
-    return view('checkout', ["cartproducts" => $cart_products]);
+    return view('checkout', ["cartproducts" => $cart_products, 'displayCart' => false]);
 })->middleware('auth');

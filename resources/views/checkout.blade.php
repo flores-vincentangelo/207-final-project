@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <x-header-component />
+    <x-header-component :displaycart="$displayCart" />
     <div class="checkout h-screen w-screen flex flex-col items-center justify-center">
         @php
             $totalCost = 0

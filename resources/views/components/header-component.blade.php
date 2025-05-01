@@ -13,6 +13,7 @@
     </a>
 
     <div class="flex flex-row items-center">
+        @if ($displaycart)
         <div class="cart-icon-container">
             <button @click="cartOpen = !cartOpen" class="flex flex-row items-center">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +22,8 @@
                         stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
-        </div>
+        </div> 
+        @endif
         <div class="flex flex-col items-center justify-center">
 
             <div class="text-xl mb-3">

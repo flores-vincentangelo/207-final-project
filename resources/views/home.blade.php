@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <x-header-component />
+    <x-header-component :displaycart="$displayCart" />
     <div class="search-container flex flex-row items-center justify-center">
         <div class="svg-container bg-green hover:bg-dark-green flex flex-row items-center rounded-lg">
             <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
