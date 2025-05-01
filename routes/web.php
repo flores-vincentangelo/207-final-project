@@ -52,11 +52,44 @@ Route::post('/add-to-cart/{product}', [CartController::class, 'addToCart']);
 Route::put('/update-cart/{product}', [CartController::class, 'updateCart']);
 
 Route::get('/checkout', function() {
+    $user = Auth::user();
     $cart = Auth::user()->cart()->get();
     $cart_products= $cart[0]->products()->get();
     if($cart_products->isEmpty()) {
         return redirect('/');
     }
 
-    return view('checkout', ["cartproducts" => $cart_products, 'displayCart' => false]);
+    $fileLocation = "data/address/";
+    
+
+    $provinceFile = fopen($fileLocation."province.json" ,"r") or die("Unable to open $fileLocation.province.json file");
+    $provinceContents = fread($provinceFile, filesize($fileLocation."province.json"));
+    $provinceData = json_decode($provinceContents);
+    fclose($provinceFile);
+
+    $regionFile = fopen($fileLocation."region.json" ,"r") or die("Unable to open $fileLocation.region.json file");
+    $regionContents = fread($regionFile, filesize($fileLocation."region.json"));
+    $regionData = json_decode($regionContents);
+    fclose($regionFile);
+
+    $cityFile = fopen($fileLocation."city.json" ,"r") or die("Unable to open $fileLocation.city.json file");
+    $cityContents = fread($cityFile, filesize($fileLocation."city.json"));
+    $cityData = json_decode($cityContents);
+    fclose($cityFile);
+
+    $barangayFile = fopen($fileLocation."barangay.json" ,"r") or die("Unable to open $fileLocation.barangay.json file");
+    $barangayContents = fread($barangayFile, filesize($fileLocation."barangay.json"));
+    $barangayData = json_decode($barangayContents);
+    fclose($barangayFile);
+
+    return view('checkout', [
+        "cartproducts" => $cart_products,
+        'displayCart' => false,
+        'user' => $user,
+        'provinceData' => $provinceData,
+        'regionData' => $regionData,
+        'cityData' => $cityData,
+        'barangayData' => $barangayData,
+
+    ]);
 })->middleware('auth');

@@ -412,6 +412,7 @@ h3 {
     .home-button-container {
         width: var(--container-width);
         margin-bottom: calc(var(--spacing) * 5);
+        cursor: pointer;
     }
     .table-container {
         width: var(--container-width);
@@ -456,6 +457,24 @@ h3 {
         }
     }
 
+    .deliver-container {
+        width: var(--container-width);
+
+        .customer-info-container {
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+
+            input[type=text] {
+                width: calc(var(--spacing) * 100);
+            }
+        }
+
+        label {
+            margin-right: calc(var(--spacing) * 3);
+        }
+    }
 
 
 }
