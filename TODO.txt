@@ -1,5 +1,5 @@
 X cleanup cart
 X cleanup filter
 X fix checkout
-register in login
-responsiveness
+X register in login
+X responsiveness

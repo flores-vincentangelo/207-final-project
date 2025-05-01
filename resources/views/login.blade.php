@@ -10,7 +10,7 @@
             </svg>
             <p class="text-2xl text-dark-green font-bold">Eco Products</p>
         </div>
-        <div class="form-container">
+        <div class="form-container flex flex-col">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-dark-green md:text-2xl">
                     Log in
@@ -28,6 +28,10 @@
                             required="">
                     </div>
                     <button class="form-button w-full">Log in</button>
+                    <p class="text-sm font-light text-gray-600 mt-3">
+                        Don't have an account? <a href="/register" class="font-medium text-primary-600 hover:underline">Register
+                            here</a>
+                    </p>
                 </form>
             </div>
         </div>
