@@ -92,6 +92,30 @@ body {
     box-sizing: border-box;
 }
 
+/* general styling classes */
+
+.filled {
+    path {
+        fill: var(--color-green);
+    }
+}
+
+.curve-edge {
+    border-radius: 10px;
+
+}
+
+.shadowing {
+    box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
+    -webkit-box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
+    -moz-box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
+}
+
+input {
+    border: 1px solid var(--color-green); 
+    border-radius: var(--radius-lg);
+}
+
 .form-container {
     @apply shadow-xl/20 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0;
 }
@@ -119,6 +143,8 @@ h3 {
     font-size: calc(var(--spacing) * 7);
     font-weight: bold;
 }
+
+/* end of styling classes */
 
 .header-container {
     width: 100%;
@@ -157,22 +183,6 @@ h3 {
     }
 
 
-}
-
-.curve-edge {
-    border-radius: 10px;
-
-}
-
-.shadowing {
-    box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
-    -webkit-box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
-    -moz-box-shadow: 8px 8px 22px -6px rgba(97,97,97,0.75);
-}
-
-input {
-    border: 1px solid var(--color-green); 
-    border-radius: var(--radius-lg);
 }
 
 .search-container {
@@ -251,11 +261,6 @@ input {
                 height: calc(var(--spacing) * 5);
     
     
-            }
-            .filled {
-                path {
-                    fill: var(--color-green);
-                }
             }
         }
     
@@ -347,10 +352,45 @@ input {
         margin-top: calc(var(--spacing) * 20);
     }
 }
-/* some changes */
+
+.filter-container {
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
+
+    form {
+
+        h3 {
+            margin: calc(var(--spacing) * 3) 0;
+        }
 
 
+        .input-label-container {
+            margin-bottom: calc(var(--spacing) * 1.5);
+            input[type=radio] {
+                margin-right: calc(var(--spacing) * 1.5);
+            }
+            .radio-labels {
+                svg {
+                    height: calc(var(--spacing) * 5);
+                    width: calc(var(--spacing) * 5);
+                    margin-right: calc(var(--spacing) * 1);
+                }
+            }
+        }
 
+        .button-container {
+            margin-top: calc(var(--spacing) * 2);
+            > * {
+                margin: 0 calc(var(--spacing) * 2);
+            }
+
+            .clear-button {
+                @apply text-white bg-gray-400 hover:bg-gray-600 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center;
+            }
+        }
+    }
+
+
+}
 
 .checkout {
     --table-width: 90%;
