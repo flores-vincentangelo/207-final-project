@@ -3,7 +3,6 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
-use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +11,18 @@ use Illuminate\Support\Facades\Auth;
 Route::redirect('/', '/home');
 Route::get('/home/{query?}', function (Request $request) {
     
-    $products = (new ProductController)->search($request);
+    $query = $request->input('query');
+    $min = $request->input('min');
+    $max = $request->input('max');
+    $rating = $request->input('rating');
+    $products = null;
+    if ( $min || $max || $rating) {
+        // $products = (new ProductController)->filter();
+        $products = (new ProductController)->filter($min, $max, $rating);
+    } else {
+        $products = (new ProductController)->search($query);
+    }
+
     $cart = Auth::user()->cart()->get();
     $cart_products = null;
     if ($cart->isEmpty()) {

@@ -17,7 +17,6 @@
     </div>
     <div>
         <form action="" method="GET">
-            @csrf
             <h3>
                 Price Range
             </h3>
