@@ -86,7 +86,7 @@ select:focus[data-flux-control] {
 } */
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
@@ -407,6 +407,7 @@ h3 {
 .checkout {
     --table-width: 90%;
     --container-width: 80vw;
+    height: 100%;
 
     
     .home-button-container {
@@ -417,6 +418,7 @@ h3 {
     .table-container {
         width: var(--container-width);
         border-radius: 10px;
+        margin-bottom: calc(var(--spacing) * 7);
 
         .image-styling {
             height: 100px;
@@ -459,8 +461,11 @@ h3 {
 
     .deliver-container {
         width: var(--container-width);
+        margin-bottom: calc(var(--spacing) * 7);
+        padding: calc(var(--spacing) * 10);
 
         .customer-info-container {
+            margin-top: calc(var(--spacing) * 5);
             display:flex;
             flex-direction: row;
             align-items: center;
@@ -474,6 +479,40 @@ h3 {
         label {
             margin-right: calc(var(--spacing) * 3);
         }
+
+        .address-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: calc(var(--spacing) * 5);
+
+            .select-container {
+                margin-bottom: calc(var(--spacing) * 4);
+            }
+
+            label {
+                width: calc(var(--spacing) * 30);
+                text-align: right;
+            }
+            
+            select, input {
+                width: calc(var(--spacing) * 120);
+            }
+        }
+
+        .button-container {
+            margin-top: calc(var(--spacing) * 2);
+            > * {
+                margin: 0 calc(var(--spacing) * 2);
+            }
+
+            .clear-button {
+                @apply text-white bg-gray-400 hover:bg-gray-600 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center;
+            }
+        }
+
     }
 
 

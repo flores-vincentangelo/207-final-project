@@ -2,7 +2,7 @@
 @section('content')
     <x-header-component :displaycart="$displayCart" />
 
-    <div class="checkout h-screen w-screen flex flex-col items-center justify-center">
+    <div class="checkout w-screen flex flex-col items-center">
         @php
             $totalCost = 0
         @endphp
@@ -10,7 +10,7 @@
             <a href="/">
                 < Back to Home</a>
         </div>
-        <div class="table-container shadowing curve-edge bg-white flex flex-col items-center p-3 mb-4">
+        <div class="table-container shadowing curve-edge bg-white flex flex-col items-center p-3">
             <h1 class="text-dark-green">Products</h1>
             <table class="">
                 <tr class="header-row">
@@ -43,7 +43,8 @@
 
         <div class="deliver-container shadowing curve-edge bg-white flex flex-col items-center p-3">
             <form action="" class="w-full flex flex-col items-baseline">
-                <h2 class="text-dark-green">Customer Info</h2>
+                <span class="text-gray-400">*This form won't actually collect your data. This is for demo purposes only</span>
+                <h2 class="text-dark-green">Customer Info:</h2>
                 @csrf
                 <div class="customer-info-container w-full">
                     <div class="flex flex-row items-center">
@@ -56,8 +57,7 @@
                     </div>
                 </div>
 
-                <h2 class="text-dark-green">Address</h2>
-
+                <h2 class="text-dark-green">Address Details</h2>
                 <script>
 
                     document.addEventListener('alpine:init', () => {
@@ -93,11 +93,11 @@
                     function resetBarangay() { document.getElementById("barangay-none").selected = true };
 
                 </script>
-                <div class="flex flex-row items-center flex-wrap justify-between w-full" x-data="address">
+                <div class="address-container w-full" x-data="address">
 
-                    <div class="flex flex-row items-center">
+                    <div class="select-container flex flex-row items-center">
                         <label for="region" class="block text-sm font-medium text-dark-green ">Region: </label>
-                        <select name="region" id="region" x-model="regionCode"
+                        <select class="form-input" name="region" id="region" x-model="regionCode"
                             x-on:change="resetProvince();resetCity();resetBarangay();">
                             <option value="none" selected disabled hidden>Region</option>
                             @foreach ($regionData as $region)
@@ -106,9 +106,9 @@
                         </select>
                     </div>
 
-                    <div class="flex flex-row items-center">
+                    <div class="select-container flex flex-row items-center">
                         <label for="province" class="block text-sm font-medium text-dark-green ">Province: </label>
-                        <select name="province" id="province" x-model="provinceCode"
+                        <select class="form-input" name="province" id="province" x-model="provinceCode"
                             x-on:change="resetCity();resetBarangay();">
                             <option id="province-none" value="none" selected disabled hidden>Province</option>
                             <template x-for="p in filteredProvinces()" :key="p . province_code">
@@ -117,11 +117,9 @@
                         </select>
                     </div>
 
-
-
-                    <div class="flex flex-row items-center">
+                    <div class="select-container flex flex-row items-center">
                         <label for="city" class="block text-sm font-medium text-dark-green ">City: </label>
-                        <select name="city" id="city" x-model="cityCode" x-on:change="resetBarangay();">
+                        <select class="form-input" name="city" id="city" x-model="cityCode" x-on:change="resetBarangay();">
                             <option id="city-none" value="none" selected disabled hidden>City</option>
                             <template x-for="c in filteredCities()" :key="c . city_code">
                                 <option :value="c . city_code" x-text="c.city_name"></option>
@@ -129,16 +127,32 @@
                         </select>
                     </div>
 
-
-                    <div class="flex flex-row items-center">
+                    <div class="select-container flex flex-row items-center">
                         <label for="barangay" class="block text-sm font-medium text-dark-green ">Barangay: </label>
-                        <select name="barangay" id="barangay" x-model="barangayCode">
-                            <option id="barangay-none" value="none" selected disabled hidden>barangay</option>
+                        <select class="form-input" name="barangay" id="barangay" x-model="barangayCode">
+                            <option id="barangay-none" value="none" selected disabled hidden>Barangay</option>
                             <template x-for="b in filteredBarangays()" :key="b . brgy_code">
                                 <option :value="b . brgy_code" x-text="b.brgy_name"></option>
                             </template>
                         </select>
                     </div>
+
+                    <div class="select-container flex flex-row items-center">
+                        <label for="street" class="block text-sm font-medium text-dark-green ">Street Address: </label>
+                        <input class="form-input" type="text" name="street" id="street" placeholder="Street Address">
+                    </div>
+
+                    <div class="select-container flex flex-row items-center">
+                        <label for="zip" class="block text-sm font-medium text-dark-green ">Zip Code: </label>
+                        <input class="form-input" type="text" name="zip" id="zip" placeholder="Zip code">
+                    </div>
+                </div>
+
+                <div class="button-container flex flex-row items-center w-full justify-center">
+                    <button class="form-button">
+                        Submit
+                    </button>
+                    <input class="clear-button" type="reset" value="Reset Form">
                 </div>
             </form>
         </div>
