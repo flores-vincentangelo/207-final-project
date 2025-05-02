@@ -83,3 +83,30 @@ npm run build
 
 php artisan migrate
 php artisan db:seed
+
+Submission Guidelines
+
+1. Deliverables
+
+Students must submit the following:
+✅ Project Source Code (PHP & MySQL files)
+✅ Database Export File (.sql)
+✅ Project Documentation (PDF format, including system overview, features, and sustainability impact)
+✅ Demo Video (3-5 minutes walkthrough of the system)
+
+2. Submission Format
+
+a.      All files must be compressed in a single ZIP folder named:
+📁 LastName_FirstName_ProjectTitle.zip
+
+b.     The ZIP file must include clear folder organization:
+
+project_code/ (PHP files) 
+database/ (SQL file) 
+documentation.pdf 
+Unlisted YouTube link of the demo (TXT file) 
+3. Submission Platform & Deadline
+
+Upload the ZIP file to the designated submission bin.
+Deadline: May 3, 2025, 11:59 PHT. This is the final day of classes, so no extensions will be granted. Late submissions will not be accepted. Please ensure timely submission.
+4. Evaluation Criteria

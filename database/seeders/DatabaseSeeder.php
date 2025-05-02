@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        DB::table("users")->truncate();
-        DB::table("products")->truncate();
+        // DB::table("users")->truncate();
+        // DB::table("products")->truncate();
 
         User::factory()->create([
             'name' => 'Vincent',
